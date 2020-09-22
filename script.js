@@ -29,6 +29,7 @@ class Calculator {
         if (number === '.' && this.currentOperand.includes('.')) return
         this.currentOperand = String(this.currentOperand) + String(number)
     }
+
     choseOperation(operation) {
         if (this.currentOperand === '') return
         if (this.previousOperand !== '') {
@@ -38,6 +39,7 @@ class Calculator {
         this.previousOperand = this.currentOperand
         this.currentOperand = ''
     }
+
     compute() {
         let computation
         const prev = parseFloat(this.previousOperand)
@@ -73,6 +75,7 @@ class Calculator {
         this.operation = undefined
         this.previousOperand = ''
     }
+
     getDisplayNumber(number) {
         const stringNumber = String(number)
         if (isNaN(number)) {
@@ -95,6 +98,7 @@ class Calculator {
             return integerDisplay
         }
     }
+
     updateDisplay() {
         if (this.currentOperand === '.') {
             this.currentOperandTextElement.innerText = '0.'
@@ -112,6 +116,7 @@ class Calculator {
         }
 
     }
+    
     toggleMinus() {
         this.currentOperand = -this.currentOperand
     }
